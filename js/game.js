@@ -1,6 +1,6 @@
 
 function Game() {
-  this.boardStart = ([2, 2, 0, 4, 0, 2, 0, 0, 0, 4, 0, 8, 2, 0, 2, 0,]);
+  this.boardStart = ([2, 2, 0, 4, 0, 2, 0, 0, 128, 4, 0, 8, 2, 256, 2, 0,]);
   this.rows = [$(".row1"), $(".row2"), $(".row3"), $(".row4")]
   this.cols = [$(".col1"), $(".col2"), $(".col3"), $(".col4")]
 };
@@ -25,8 +25,16 @@ Game.prototype.changeColor = function() {
         $(this).css("background", "#f67c5f")
       } else  if ($(this).text() == "64") {
         $(this).css("background", "#f65e3b")
+      } else  if ($(this).text() == "128") {
+        $(this).css("background", "#edcf72")
+        // $(this).css("font-size", "50px")
+      } else  if ($(this).text() == "256") {
+        $(this).css("background", "#edcc61")
+        // $(this).css("font-size", "50px")
+        $(this).css("box-shadow", "0 0 30px 10px rgba(243, 215, 116, 0.31746), inset 0 0 0 1px rgba(255, 255, 255, 0.19048)")
       } else  if ($(this).text() == "0") {
         $(this).css("background", "rgba(238, 228, 218, 0.35)")
+        // $(this).css("color", "rgba(238, 228, 218, 0.35)")
       };
     });
   };
