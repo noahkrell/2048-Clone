@@ -1,0 +1,43 @@
+* {
+/*  background-color: grey;
+*/}
+
+.board {
+  width: 410px;
+  height: 400px;
+  margin: auto;
+  margin-top: 50px;
+  text-align: center;
+  margin-bottom: 100px;
+}
+
+.cell {
+  font-family: tahoma;
+  width: 100px;
+  height: 100px;
+  float: left;
+  font-size: 20px;
+  border-radius: 10px;
+  font-size: 80px;
+  outline: 3px solid white;
+  background: rgba(238, 228, 218, 0.35);
+}
+
+
+body {
+  font-family: monospace;
+}
+
+#header {
+  margin: auto;
+  text-align: center;
+}
+
+.button {
+  margin: auto;
+  text-align: center;
+}
+/*
+#new-game-button {
+  color: white;
+}*/
