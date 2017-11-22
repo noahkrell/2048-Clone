@@ -4,6 +4,8 @@ $(document).ready(function() {
   $("#new-game-button").on('click', function() {
     console.log("new game started!")
     game.render()
+    game.spawnTwo()
+    game.spawnTwo()
     game.changeColor()
   });
   

@@ -1,6 +1,6 @@
 
 function Game() {
-  this.boardStart = ([2, 2, 512, 4, 1024, 2, 0, 2048, 128, 4, 0, 8, 2, 256, 2, 0,]);
+  this.boardStart = ([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,]);
   this.rows = [$(".row1"), $(".row2"), $(".row3"), $(".row4")]
   this.cols = [$(".col1"), $(".col2"), $(".col3"), $(".col4")]
 };
@@ -12,7 +12,14 @@ Game.prototype.render = function() {
 };
 
 function resetColors() {
-  $('.a0, .a2, .a4, .a8, .a16, .a32, .a64, .a128, .a256, .512, .a1024, .a2048').removeClass('a0 a2 a4 a8 a16 a32 a64 a128 a256 a512 a1024 a2048');
+  $('.a0, .a2, .a4, .a8, .a16, .a32, .a64, .a128, .a256, .a512, .a1024, .a2048').removeClass('a0 a2 a4 a8 a16 a32 a64 a128 a256 a512 a1024 a2048');
+}
+
+function addJello() {
+  $(".cell").addClass("jello")
+}
+function removeJello() {
+  $(".cell").removeClass("jello")
 }
 
 Game.prototype.changeColor = function() {
@@ -165,27 +172,35 @@ Game.prototype.moveRight = function() {
 
 
 Mousetrap.bind('up', function() {
-  game.moveUp()
-  game.spawnTwo()
-  game.changeColor()
+  removeJello();
+  game.moveUp();
+  game.spawnTwo();
+  game.changeColor();
+  addJello();
 });
 
 Mousetrap.bind('down', function() {
-  game.moveDown()
-  game.spawnTwo()
-  game.changeColor()
+  removeJello();
+  game.moveDown();
+  game.spawnTwo();
+  game.changeColor();
+  addJello();
 });
 
 Mousetrap.bind('left', function() {
-  game.moveLeft()
-  game.spawnTwo()
-  game.changeColor()
+  removeJello();
+  game.moveLeft();
+  game.spawnTwo();
+  game.changeColor();
+  addJello();
 });
 
 Mousetrap.bind('right', function() {
-  game.moveRight()
-  game.spawnTwo()
-  game.changeColor()
+  removeJello();
+  game.moveRight();
+  game.spawnTwo();
+  game.changeColor();
+  addJello();
 });
 
 
