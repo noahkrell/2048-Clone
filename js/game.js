@@ -1,6 +1,6 @@
 
 function Game() {
-  this.boardStart = ([2, 2, 0, 4, 0, 2, 0, 0, 128, 4, 0, 8, 2, 256, 2, 0,]);
+  this.boardStart = ([2, 2, 512, 4, 1024, 2, 0, 2048, 128, 4, 0, 8, 2, 256, 2, 0,]);
   this.rows = [$(".row1"), $(".row2"), $(".row3"), $(".row4")]
   this.cols = [$(".col1"), $(".col2"), $(".col3"), $(".col4")]
 };
@@ -11,30 +11,37 @@ Game.prototype.render = function() {
   });
 };
 
+function resetColors() {
+  $('.a0, .a2, .a4, .a8, .a16, .a32, .a64, .a128, .a256, .512, .a1024, .a2048').removeClass('a0 a2 a4 a8 a16 a32 a64 a128 a256 a512 a1024 a2048');
+}
+
 Game.prototype.changeColor = function() {
+  resetColors()
   $(".cell").each(function(i) {
     if ($(this).text() == "2") {
-        $(this).css("background", "#eee4da")
+        $(this).addClass("a2");
       } else if ($(this).text() == "4") {
-        $(this).css("background", "#ede0c8")
+        $(this).addClass("a4");
       } else  if ($(this).text() == "8") {
-        $(this).css("background", " #f2b179")
+        $(this).addClass("a8");
       } else  if ($(this).text() == "16") {
-        $(this).css("background", "#f59563")
+        $(this).addClass("a16");
       } else  if ($(this).text() == "32") {
-        $(this).css("background", "#f67c5f")
+        $(this).addClass("a32");
       } else  if ($(this).text() == "64") {
-        $(this).css("background", "#f65e3b")
+        $(this).addClass("a64");
       } else  if ($(this).text() == "128") {
-        $(this).css("background", "#edcf72")
-        // $(this).css("font-size", "50px")
+        $(this).addClass("a128");
       } else  if ($(this).text() == "256") {
-        $(this).css("background", "#edcc61")
-        // $(this).css("font-size", "50px")
-        $(this).css("box-shadow", "0 0 30px 10px rgba(243, 215, 116, 0.31746), inset 0 0 0 1px rgba(255, 255, 255, 0.19048)")
+        $(this).addClass("a256");
+      } else  if ($(this).text() == "512") {
+        $(this).addClass("a512");
+      } else  if ($(this).text() == "1024") {
+        $(this).addClass("a1024");
+      } else  if ($(this).text() == "2048") {
+        $(this).addClass("a2048");
       } else  if ($(this).text() == "0") {
-        $(this).css("background", "rgba(238, 228, 218, 0.35)")
-        // $(this).css("color", "rgba(238, 228, 218, 0.35)")
+        $(this).addClass("a0");
       };
     });
   };

@@ -14,13 +14,12 @@
   float: left;
   font-size: 20px;
   border-radius: 10px;
-  font-size: 80px;
+  font-size: 2.5vw;
   outline: 3px solid white;
   background: rgba(238, 228, 218, 0.35);
   margin-top: 5px;
   margin-right: 2px;
 }
-
 
 body {
   font-family: monospace;
@@ -36,3 +35,59 @@ body {
   margin: auto;
   text-align: center;
 }
+
+.a0 {
+  background: rgba(238, 228, 218, 0.35);
+  color: transparent;
+}
+
+.a2 {
+  background: #eee4da;
+}
+
+.a4 {
+  background: #ede0c8;
+}
+
+.a8 {
+  background: #f2b179;
+}
+
+.a16 {
+  background: #f59563;
+}
+
+.a32 {
+  background: #f67c5f;
+}
+
+.a64 {
+  background: #f65e3b;
+}
+
+.a128 {
+  background: #edcf72;
+}
+
+.a256 {
+  background: #edcc61;
+  box-shadow: 0 0 30px 10px rgba(243, 215, 116, 0.31746), inset 0 0 0 1px rgba(255, 255, 255, 0.19048);
+}
+
+.a512 {
+  background: #edc850;
+}
+
+.a1024 {
+  background: #edc53f;
+}
+
+.a2048 {
+  background: #34312d;
+  color: #edcf72;
+}
+
+
+
+
+
