@@ -15,7 +15,7 @@ function removeJello() {
   $(".cell").removeClass("jello")
 }
 
-Game.prototype.checkForWin = function() {
+Game.prototype.checkForGameOver = function() {
   $(".cell").each(function() {
     if ($(this).text() == "2048") {
       alert("YOU WIN! Click okay to view the final board. You can continue playing, or hit New Game to reset.")
@@ -183,7 +183,7 @@ Mousetrap.bind('up', function() {
   game.spawnTwo();
   game.changeColor();
   addJello();
-  game.checkForWin();
+  game.checkForGameOver();
 });
 
 Mousetrap.bind('down', function() {
@@ -192,7 +192,7 @@ Mousetrap.bind('down', function() {
   game.spawnTwo();
   game.changeColor();
   addJello();
-  game.checkForWin();
+  game.checkForGameOver();
 });
 
 Mousetrap.bind('left', function() {
@@ -201,7 +201,7 @@ Mousetrap.bind('left', function() {
   game.spawnTwo();
   game.changeColor();
   addJello();
-  game.checkForWin();
+  game.checkForGameOver();
 });
 
 Mousetrap.bind('right', function() {
@@ -210,5 +210,5 @@ Mousetrap.bind('right', function() {
   game.spawnTwo();
   game.changeColor();
   addJello();
-  game.checkForWin();
+  game.checkForGameOver();
 });
