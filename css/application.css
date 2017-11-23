@@ -2,7 +2,7 @@
   width: 410px;
   height: 400px;
   margin: auto;
-  margin-top: 50px;
+  margin-top: 30px;
   text-align: center;
   margin-bottom: 100px;
 }
@@ -30,11 +30,17 @@ body {
 #header {
   margin: auto;
   text-align: center;
+  margin-bottom: 20px;
 }
 
 .button {
   margin: auto;
   text-align: center;
+}
+
+.instructions {
+  margin-left: 300px;
+  margin-right: 300px;
 }
 
 @keyframes jello {
