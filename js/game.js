@@ -1,8 +1,26 @@
 
 function Game() {
-  this.boardStart = ([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,]);
+  this.boardStart = ([1024, 1024, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,]);
   this.rows = [$(".row1"), $(".row2"), $(".row3"), $(".row4")]
   this.cols = [$(".col1"), $(".col2"), $(".col3"), $(".col4")]
+};
+
+function resetColors() {
+  $('.a0, .a2, .a4, .a8, .a16, .a32, .a64, .a128, .a256, .a512, .a1024, .a2048').removeClass('a0 a2 a4 a8 a16 a32 a64 a128 a256 a512 a1024 a2048');
+}
+function addJello() {
+  $(".cell").addClass("jello")
+}
+function removeJello() {
+  $(".cell").removeClass("jello")
+}
+
+Game.prototype.checkForWin = function() {
+  $(".cell").each(function() {
+    if ($(this).text() == "2048") {
+      alert("YOU WIN! Click okay to view the final board. You can continue playing, or hit New Game to reset.")
+    };
+  });
 };
 
 Game.prototype.render = function() {
@@ -11,17 +29,6 @@ Game.prototype.render = function() {
   });
 };
 
-function resetColors() {
-  $('.a0, .a2, .a4, .a8, .a16, .a32, .a64, .a128, .a256, .a512, .a1024, .a2048').removeClass('a0 a2 a4 a8 a16 a32 a64 a128 a256 a512 a1024 a2048');
-}
-
-function addJello() {
-  $(".cell").addClass("jello")
-}
-function removeJello() {
-  $(".cell").removeClass("jello")
-}
-
 Game.prototype.changeColor = function() {
   resetColors()
   $(".cell").each(function(i) {
@@ -29,25 +36,25 @@ Game.prototype.changeColor = function() {
         $(this).addClass("a2");
       } else if ($(this).text() == "4") {
         $(this).addClass("a4");
-      } else  if ($(this).text() == "8") {
+      } else if ($(this).text() == "8") {
         $(this).addClass("a8");
-      } else  if ($(this).text() == "16") {
+      } else if ($(this).text() == "16") {
         $(this).addClass("a16");
-      } else  if ($(this).text() == "32") {
+      } else if ($(this).text() == "32") {
         $(this).addClass("a32");
-      } else  if ($(this).text() == "64") {
+      } else if ($(this).text() == "64") {
         $(this).addClass("a64");
-      } else  if ($(this).text() == "128") {
+      } else if ($(this).text() == "128") {
         $(this).addClass("a128");
-      } else  if ($(this).text() == "256") {
+      } else if ($(this).text() == "256") {
         $(this).addClass("a256");
-      } else  if ($(this).text() == "512") {
+      } else if ($(this).text() == "512") {
         $(this).addClass("a512");
-      } else  if ($(this).text() == "1024") {
+      } else if ($(this).text() == "1024") {
         $(this).addClass("a1024");
-      } else  if ($(this).text() == "2048") {
+      } else if ($(this).text() == "2048") {
         $(this).addClass("a2048");
-      } else  if ($(this).text() == "0") {
+      } else if ($(this).text() == "0") {
         $(this).addClass("a0");
       };
     });
@@ -66,17 +73,17 @@ Game.prototype.spawnTwo = function() {
 
 function isMerged(cell) {
   if (cell.classList.contains("merged")) {
-    return true
+    return true;
   } else {
-    return false
-  }
-}
+    return false;
+  };
+};
 
 function cleanSlate() {
   $(".merged").each(function() {
-    $(this).removeClass("merged")
-  })
-}
+    $(this).removeClass("merged");
+  });
+};
 
 Game.prototype.moveDown = function() {
   cleanSlate()
@@ -170,13 +177,13 @@ Game.prototype.moveRight = function() {
   };
 };
 
-
 Mousetrap.bind('up', function() {
   removeJello();
   game.moveUp();
   game.spawnTwo();
   game.changeColor();
   addJello();
+  game.checkForWin();
 });
 
 Mousetrap.bind('down', function() {
@@ -185,6 +192,7 @@ Mousetrap.bind('down', function() {
   game.spawnTwo();
   game.changeColor();
   addJello();
+  game.checkForWin();
 });
 
 Mousetrap.bind('left', function() {
@@ -193,6 +201,7 @@ Mousetrap.bind('left', function() {
   game.spawnTwo();
   game.changeColor();
   addJello();
+  game.checkForWin();
 });
 
 Mousetrap.bind('right', function() {
@@ -201,7 +210,5 @@ Mousetrap.bind('right', function() {
   game.spawnTwo();
   game.changeColor();
   addJello();
+  game.checkForWin();
 });
-
-
-

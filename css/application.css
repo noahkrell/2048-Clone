@@ -68,7 +68,7 @@ body {
 }
 
 .jello {
-  animation: jello 0.5s;
+  animation: jello 0.2s;
   transform-origin: center
 }
 
