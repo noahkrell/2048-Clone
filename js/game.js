@@ -1,6 +1,6 @@
 
 function Game() {
-  this.boardStart = ([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,]);
+  this.boardStart = ([0, 0, 0, 0, 2048, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,]);
   this.rows = [$(".row1"), $(".row2"), $(".row3"), $(".row4")]
   this.cols = [$(".col1"), $(".col2"), $(".col3"), $(".col4")]
 };
@@ -18,6 +18,7 @@ function removeJello() {
 Game.prototype.checkForGameOver = function() {
   $(".cell").each(function() {
     if ($(this).text() == "2048") {
+      // still need to make this message a flash that only alerts the user once
       alert("YOU WIN! Click okay to view the final board. You can continue playing, or hit New Game to reset.")
     };
   });
@@ -33,32 +34,32 @@ Game.prototype.changeColor = function() {
   resetColors()
   $(".cell").each(function(i) {
     if ($(this).text() == "2") {
-        $(this).addClass("a2");
-      } else if ($(this).text() == "4") {
-        $(this).addClass("a4");
-      } else if ($(this).text() == "8") {
-        $(this).addClass("a8");
-      } else if ($(this).text() == "16") {
-        $(this).addClass("a16");
-      } else if ($(this).text() == "32") {
-        $(this).addClass("a32");
-      } else if ($(this).text() == "64") {
-        $(this).addClass("a64");
-      } else if ($(this).text() == "128") {
-        $(this).addClass("a128");
-      } else if ($(this).text() == "256") {
-        $(this).addClass("a256");
-      } else if ($(this).text() == "512") {
-        $(this).addClass("a512");
-      } else if ($(this).text() == "1024") {
-        $(this).addClass("a1024");
-      } else if ($(this).text() == "2048") {
-        $(this).addClass("a2048");
-      } else if ($(this).text() == "0") {
-        $(this).addClass("a0");
-      };
-    });
-  };
+      $(this).addClass("a2");
+    } else if ($(this).text() == "4") {
+      $(this).addClass("a4");
+    } else if ($(this).text() == "8") {
+      $(this).addClass("a8");
+    } else if ($(this).text() == "16") {
+      $(this).addClass("a16");
+    } else if ($(this).text() == "32") {
+      $(this).addClass("a32");
+    } else if ($(this).text() == "64") {
+      $(this).addClass("a64");
+    } else if ($(this).text() == "128") {
+      $(this).addClass("a128");
+    } else if ($(this).text() == "256") {
+      $(this).addClass("a256");
+    } else if ($(this).text() == "512") {
+      $(this).addClass("a512");
+    } else if ($(this).text() == "1024") {
+      $(this).addClass("a1024");
+    } else if ($(this).text() == "2048") {
+      $(this).addClass("a2048");
+    } else if ($(this).text() == "0") {
+      $(this).addClass("a0");
+    };
+  });
+};
 
 Game.prototype.spawnTwo = function() {
   var cells = $(".cell")
