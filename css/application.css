@@ -8,19 +8,19 @@
 }
 
 .cell {
-  font-family: tahoma;
+  font-family: monospace;
   width: 100px;
   height: 100px;
   float: left;
   font-size: 20px;
   border-radius: 10px;
   font-size: 3.2vw;
-  outline: 3px solid white;
-  background: rgba(238, 228, 218, 0.35);
+/*  outline: 3px solid white;
+*/  background: rgba(238, 228, 218, 0.35);
   margin-top: 5px;
   margin-right: 2px;
-  vertical-align: center;
-  text-shadow: 1px 1px;
+  font-weight: bold;
+  box-shadow: 5px 3px;
 }
 
 body {
@@ -114,7 +114,6 @@ body {
 
 .a256 {
   background: #edcc61;
-  box-shadow: 0 0 30px 10px rgba(243, 215, 116, 0.31746), inset 0 0 0 1px rgba(255, 255, 255, 0.19048);
 }
 
 .a512 {
