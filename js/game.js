@@ -1,6 +1,6 @@
 
 function Game() {
-  this.boardStart = ([0, 0, 0, 0, 2048, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,]);
+  this.boardStart = ([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,]);
   this.rows = [$(".row1"), $(".row2"), $(".row3"), $(".row4")]
   this.cols = [$(".col1"), $(".col2"), $(".col3"), $(".col4")]
 };
