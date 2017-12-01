@@ -1,0 +1,23 @@
+{
+  "name": "2048-clone",
+  "version": "1.0.0",
+  "description": "Clone of the popular desktop game 2048 (http://2048game.com/).",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/noahkrell/2048-Clone.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/noahkrell/2048-Clone/issues"
+  },
+  "homepage": "https://github.com/noahkrell/2048-Clone#readme",
+  "dependencies": {
+    "express": "^4.16.2"
+  }
+}
