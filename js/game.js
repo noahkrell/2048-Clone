@@ -24,6 +24,37 @@ Game.prototype.checkForGameOver = function() {
   });
 };
 
+Game.prototype.currentBoard = function() {
+  var board = []
+  $(".cell").each(function() {
+    board.push($(this).text())
+  });
+  return board
+}
+
+Game.prototype.checkForLoss = function() {
+  if (!game.currentBoard().includes("0")) {
+    var moves = 0
+    for (var i = 0; i < this.rows.length-1; i++) {
+      for (var j = 1; j <= this.rows.length; j++) {
+        if ($(".row" + j)[i].innerText == $(".row" + j)[i+1].innerText) {
+          moves += 1
+          console.log(moves)
+        };
+
+        if ($(".col" + j)[i].innerText == $(".col" + j)[i+1].innerText) {
+          moves += 1
+          console.log(moves)
+        };
+      }
+    };
+
+    if (moves == 0) {
+      alert("Game Over!")
+    }
+  }
+};
+
 Game.prototype.render = function() {
   $(".cell").each(function(i) {
     $(this).text(game.boardStart[i])
@@ -185,6 +216,7 @@ Mousetrap.bind('up', function() {
   game.changeColor();
   addJello();
   game.checkForGameOver();
+  game.checkForLoss();
 });
 
 Mousetrap.bind('down', function() {
@@ -194,6 +226,7 @@ Mousetrap.bind('down', function() {
   game.changeColor();
   addJello();
   game.checkForGameOver();
+  game.checkForLoss();
 });
 
 Mousetrap.bind('left', function() {
@@ -203,6 +236,7 @@ Mousetrap.bind('left', function() {
   game.changeColor();
   addJello();
   game.checkForGameOver();
+  game.checkForLoss();
 });
 
 Mousetrap.bind('right', function() {
@@ -212,4 +246,5 @@ Mousetrap.bind('right', function() {
   game.changeColor();
   addJello();
   game.checkForGameOver();
+  game.checkForLoss();
 });
